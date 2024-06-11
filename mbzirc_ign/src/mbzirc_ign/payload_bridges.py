@@ -115,7 +115,7 @@ def rfranger(world_name, model_name, slot_idx, model_prefix=''):
         ign_topic=f'{prefix}/rfsensor',
         ros_topic=f'{ros_prefix}/rfsensor',
         ign_type='ignition.msgs.Param_V',
-        ros_type='ros_ign_interfaces/msg/ParamVec',
+        ros_type='ros_gz_interfaces/msg/ParamVec',
         direction=BridgeDirection.IGN_TO_ROS)
 
 

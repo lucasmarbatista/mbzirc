@@ -121,7 +121,7 @@ class TestBridges(unittest.TestCase):
         bridge = bridges.gripper_suction_contacts(self.model_name, True)
         self.assertEqual(bridge.argument(),
                          f'/{self.model_name}/arm/gripper/contact'
-                         '@ros_ign_interfaces/msg/Contacts[ignition.msgs.Contacts')
+                         '@ros_gz_interfaces/msg/Contacts[ignition.msgs.Contacts')
 
         bridge = bridges.gripper_suction_control(self.model_name, True)
         self.assertEqual(bridge.argument(),
@@ -151,7 +151,7 @@ class TestBridges(unittest.TestCase):
         bridge = bridges.gripper_suction_contacts(self.model_name, False)
         self.assertEqual(bridge.argument(),
                          f'/{self.model_name}/gripper/contact'
-                         '@ros_ign_interfaces/msg/Contacts[ignition.msgs.Contacts')
+                         '@ros_gz_interfaces/msg/Contacts[ignition.msgs.Contacts')
 
         bridge = bridges.gripper_suction_control(self.model_name, False)
         self.assertEqual(bridge.argument(),
@@ -162,11 +162,11 @@ class TestBridges(unittest.TestCase):
         bridge = bridges.comms_tx(self.model_name)
         self.assertEqual(bridge.argument(),
                          '/broker/msgs'
-                         '@ros_ign_interfaces/msg/Dataframe]ignition.msgs.Dataframe')
+                         '@ros_gz_interfaces/msg/Dataframe]ignition.msgs.Dataframe')
         bridge = bridges.comms_rx(self.model_name)
         self.assertEqual(bridge.argument(),
                          f'/model/{self.model_name}/rx'
-                         '@ros_ign_interfaces/msg/Dataframe[ignition.msgs.Dataframe')
+                         '@ros_gz_interfaces/msg/Dataframe[ignition.msgs.Dataframe')
 
     def test_competition(self):
         bridge = bridges.score()

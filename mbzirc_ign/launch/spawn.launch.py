@@ -124,9 +124,9 @@ def generate_launch_description():
             'sim_mode',
             default_value='full',
             description='Simulation mode: "full", "sim", "bridge".'
-                        'full: spawns robot and launch ros_ign bridges, '
+                        'full: spawns robot and launch ros_gz bridges, '
                         'sim: spawns robot only, '
-                        'bridge: launch ros_ign bridges only.'),
+                        'bridge: launch ros_gz bridges only.'),
         DeclareLaunchArgument(
             'bridge_competition_topics',
             default_value='True',

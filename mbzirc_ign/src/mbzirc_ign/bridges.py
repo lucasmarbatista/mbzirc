@@ -179,7 +179,7 @@ def gripper_suction_contacts(model_name, isAttachedToArm):
         ign_topic=f'/{model_name}/{prefix}/contact',
         ros_topic='{prefix}/contact',
         ign_type='ignition.msgs.Contacts',
-        ros_type='ros_ign_interfaces/msg/Contacts',
+        ros_type='ros_gz_interfaces/msg/Contacts',
         direction=BridgeDirection.IGN_TO_ROS
     )
 
@@ -215,7 +215,7 @@ def comms_tx(model_name):
         ign_topic='/broker/msgs',
         ros_topic='tx',
         ign_type='ignition.msgs.Dataframe',
-        ros_type='ros_ign_interfaces/msg/Dataframe',
+        ros_type='ros_gz_interfaces/msg/Dataframe',
         direction=BridgeDirection.ROS_TO_IGN)
 
 
@@ -224,7 +224,7 @@ def comms_rx(model_name):
         ign_topic=f'/model/{model_name}/rx',
         ros_topic='rx',
         ign_type='ignition.msgs.Dataframe',
-        ros_type='ros_ign_interfaces/msg/Dataframe',
+        ros_type='ros_gz_interfaces/msg/Dataframe',
         direction=BridgeDirection.IGN_TO_ROS)
 
 

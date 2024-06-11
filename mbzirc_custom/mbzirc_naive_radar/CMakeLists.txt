@@ -16,7 +16,7 @@ set(IGN_SENSORS_VER ${ignition-sensors6_VERSION_MAJOR})
 find_package(ignition-gazebo6 REQUIRED)
 set(IGN_GAZEBO_VER ${ignition-gazebo6_VERSION_MAJOR})
 find_package(radar_msgs REQUIRED)
-find_package(ros_ign_bridge REQUIRED)
+find_package(ros_gz_bridge REQUIRED)
 find_package(rclcpp REQUIRED)
 
 # Hooks
@@ -41,7 +41,7 @@ ament_target_dependencies(naive_radar_bridge
   PUBLIC
   rclcpp
   radar_msgs
-  ros_ign_bridge
+  ros_gz_bridge
 )
 target_link_libraries(naive_radar_bridge PUBLIC
   ignition-msgs${IGN_MSGS_VER}::ignition-msgs${IGN_MSGS_VER}

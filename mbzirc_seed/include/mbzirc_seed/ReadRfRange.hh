@@ -20,7 +20,7 @@
 
 #include <rclcpp/node.hpp>
 
-#include <ros_ign_interfaces/msg/param_vec.hpp>
+#include <ros_gz_interfaces/msg/param_vec.hpp>
 
 #include <unordered_map>
 
@@ -49,13 +49,13 @@ public:
 
 protected:
   /// \brief Callback for when air pressure messages are received
-  void onRangeMessage(const ros_ign_interfaces::msg::ParamVec & msg);
+  void onRangeMessage(const ros_gz_interfaces::msg::ParamVec & msg);
 
   /// \brief Callback for when timer fires
   void onTimer();
 
   /// Subscriptions
-  rclcpp::Subscription<ros_ign_interfaces::msg::ParamVec>::SharedPtr rf_range_sub_;
+  rclcpp::Subscription<ros_gz_interfaces::msg::ParamVec>::SharedPtr rf_range_sub_;
 
   /// Timers
   rclcpp::TimerBase::SharedPtr timer_;

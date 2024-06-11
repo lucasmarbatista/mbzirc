@@ -23,7 +23,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
-#include <ros_ign_interfaces/msg/string_vec.hpp>
+#include <ros_gz_interfaces/msg/string_vec.hpp>
 
 #include <ignition/common/Filesystem.hh>
 #include <ignition/common/Util.hh>
@@ -46,7 +46,7 @@ class VideoTargetRelay : public rclcpp::Node
   /// \param[in] _msg String vector message with the following data:
   /// [<target_type>, <image_x_pos>, <image_y_pos>]
   public: void OnTarget(
-      const std::shared_ptr<ros_ign_interfaces::msg::StringVec> _msg);
+      const std::shared_ptr<ros_gz_interfaces::msg::StringVec> _msg);
 
   /// \brief Save image to file
   /// \param[in] _msg Image to save
@@ -62,7 +62,7 @@ class VideoTargetRelay : public rclcpp::Node
   public: ignition::transport::Node node;
 
   /// \brief Subscriber for the target identification topic
-  private: rclcpp::Subscription<ros_ign_interfaces::msg::StringVec>::SharedPtr
+  private: rclcpp::Subscription<ros_gz_interfaces::msg::StringVec>::SharedPtr
       targetSub;
 
   /// \brief Subscriber for the video stream topic
@@ -93,7 +93,7 @@ VideoTargetRelay::VideoTargetRelay()
   this->get_parameter("model_name", this->robotName);
 
   this->targetSub =
-     this->create_subscription<ros_ign_interfaces::msg::StringVec>(
+     this->create_subscription<ros_gz_interfaces::msg::StringVec>(
      "mbzirc/target/stream/report", 1,
      std::bind(&VideoTargetRelay::OnTarget, this, _1));
 
@@ -191,7 +191,7 @@ void VideoTargetRelay::SaveImage(
 
 //////////////////////////////////////////////////
 void VideoTargetRelay::OnTarget(
-    const std::shared_ptr<ros_ign_interfaces::msg::StringVec> _msg)
+    const std::shared_ptr<ros_gz_interfaces::msg::StringVec> _msg)
 {
   if (_msg->data.empty())
     return;

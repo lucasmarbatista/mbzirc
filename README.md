@@ -11,13 +11,13 @@ This simulator will be enhanced with additional features throughout the simulati
 
 * Platform: Ubuntu 20.04 (Focal)
 * Ignition Fortress
-* ROS2 Galactic
+* ROS2 Humble
 
 See Installation instructions for:
 
 * Ignition Fortress: https://ignitionrobotics.org/docs/fortress
 
-* ROS2 Galactic:  https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Debians.html
+* ROS2 Humble:  https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 
 
 ### Installation from Source
@@ -30,31 +30,31 @@ See Installation instructions for:
     git clone https://github.com/osrf/mbzirc.git
     ```
 
-1. Clone the `ros_ign` repo and check out the `galactic` branch
+1. Clone the `ros_gz` repo and check out the `humble` branch
 
     ```
     cd ~/mbzirc_ws/src
-    git clone https://github.com/ignitionrobotics/ros_ign.git -b galactic
+    git clone https://github.com/ignitionrobotics/ros_gz.git -b humble
     ```
 
-1. Install dependencies using [rosdep](https://docs.ros.org/en/galactic/Installation/Ubuntu-Install-Binary.html#installing-and-initializing-rosdep)
+1. Install dependencies using [rosdep](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Binary.html#installing-and-initializing-rosdep)
 
     ```
     cd ~/mbzirc_ws
     rosdep update
-    rosdep install -r --from-paths src -i -y --rosdistro galactic
+    rosdep install -r --from-paths src -i -y --rosdistro humble
     ```
 
-    Make sure the `ros-galactic-mavros-msgs` package is installed, e.g.
+    Make sure the `ros-humble-mavros-msgs` package is installed, e.g.
 
     ```
-    dpkg -l | grep ros-galactic-mavros-msgs
+    dpkg -l | grep ros-humble-mavros-msgs
     ```
 
     If not, install it:
 
     ```
-    sudo apt install ros-galactic-mavros-msgs
+    sudo apt install ros-humble-mavros-msgs
     ```
 
 1. Build the workspace
@@ -64,7 +64,7 @@ See Installation instructions for:
     IGNITION_VERSION=fortress colcon build --merge-install
     ```
 
-    Note: Make sure to set the `IGNITION_VERSION` to `fortress`. This is needed for building the `ros_ign` package.
+    Note: Make sure to set the `IGNITION_VERSION` to `fortress`. This is needed for building the `ros_gz` package.
 
 ### Docker setup
 

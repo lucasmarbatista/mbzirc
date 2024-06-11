@@ -20,7 +20,7 @@
 #include <geometry_msgs/msg/wrench.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rosgraph_msgs/msg/clock.hpp>
-#include <ros_ign_interfaces/msg/string_vec.hpp>
+#include <ros_gz_interfaces/msg/string_vec.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/fluid_pressure.hpp>
 #include <sensor_msgs/msg/image.hpp>
@@ -37,7 +37,7 @@ using namespace std::chrono_literals;
 
 std::shared_ptr<rclcpp::Node> node;
 
-// code adapted from ros_ign_bridge
+// code adapted from ros_gz_bridge
 
 //////////////////////////////////////////////////
 /// \brief A class for testing ROS topic subscription.
@@ -372,10 +372,10 @@ TEST(RosApiTest, TargetStreamTopics)
   EXPECT_EQ("stream_started", status);
 
   auto streamReportPub = node->create_publisher<
-      ros_ign_interfaces::msg::StringVec>(
+      ros_gz_interfaces::msg::StringVec>(
       "/quadrotor/mbzirc/target/stream/report", 10);
 
-  ros_ign_interfaces::msg::StringVec msg;
+  ros_gz_interfaces::msg::StringVec msg;
   msg.data.push_back("vessel");
   msg.data.push_back("640");
   msg.data.push_back("480");

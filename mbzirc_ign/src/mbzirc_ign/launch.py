@@ -39,7 +39,7 @@ def simulation(world_name, headless=False):
 
     ign_gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('ros_ign_gazebo'), 'launch'),
+            get_package_share_directory('ros_gz'), 'launch'),
             '/ign_gazebo.launch.py']),
         launch_arguments={'ign_args': ' '.join(ign_args)}.items())
 
@@ -76,7 +76,7 @@ def competition_bridges():
     ]
     nodes = []
     nodes.append(Node(
-        package='ros_ign_bridge',
+        package='ros_gz_bridge',
         executable='parameter_bridge',
         output='screen',
         arguments=[bridge.argument() for bridge in bridges],
@@ -97,7 +97,7 @@ def spawn(sim_mode, world_name, models, robot=None):
         # Script to insert model in running simulation
         if sim_mode == 'full' or sim_mode == 'sim':
             ignition_spawn_entity = Node(
-                package='ros_ign_gazebo',
+                package='ros_gz_sim',
                 executable='create',
                 output='screen',
                 arguments=model.spawn_args()
@@ -124,7 +124,7 @@ def spawn(sim_mode, world_name, models, robot=None):
                 ))
 
             nodes.append(Node(
-                package='ros_ign_bridge',
+                package='ros_gz_bridge',
                 executable='parameter_bridge',
                 output='screen',
                 arguments=[bridge.argument() for bridge in bridges],

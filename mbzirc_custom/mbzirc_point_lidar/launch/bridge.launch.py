@@ -42,9 +42,9 @@ def launch(context, *args, **kwargs):
 
     # create a node the bridges
     # The node runs the parameter_bridge executable, see
-    # https://github.com/ignitionrobotics/ros_ign/blob/galactic/ros_ign_bridge
+    # https://github.com/ignitionrobotics/ros_gz/blob/galactic/ros_gz_bridge
     nodes.append(Node(
-        package='ros_ign_bridge',
+        package='ros_gz_bridge',
         executable='parameter_bridge',
         output='screen',
         arguments=[bridge.argument() for bridge in bridges],

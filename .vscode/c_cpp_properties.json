@@ -1,0 +1,29 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lucas/rbim/rbim_ws/install/thruster_gazebo_hw_interface/include/**",
+        "/home/lucas/rbim/rbim_ws/install/thruster_allocator_ros2_control/include/**",
+        "/home/lucas/rbim/rbim_ws/install/sonar_msgs/include/**",
+        "/home/lucas/rbim/rbim_ws/install/rbim_pid_diff_controllers/include/**",
+        "/home/lucas/rbim/rbim_ws/install/rbim_pid_controllers/include/**",
+        "/home/lucas/rbim/rbim_ws/install/rbim_msgs/include/**",
+        "/home/lucas/rbim/rbim_ws/install/ign_ros2_control/include/**",
+        "/home/lucas/rbim/rbim_ws/install/chainable_diff_drive_controller/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/lucas/mbzirc_ws/src/mbzirc/mbzirc_seed/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

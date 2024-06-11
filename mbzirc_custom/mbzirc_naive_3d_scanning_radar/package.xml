@@ -16,7 +16,7 @@
   <depend>mbzirc_ign</depend>
   <depend>launch</depend>
   <depend>launch_ros</depend>
-  <depend>ros_ign_gazebo</depend>
+  <depend>ros_gz</depend>
   <depend>radar_msgs</depend>
 
   <exec_depend>mbzirc_naive_radar</exec_depend>

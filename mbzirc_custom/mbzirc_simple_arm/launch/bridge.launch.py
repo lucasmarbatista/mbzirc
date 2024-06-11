@@ -45,7 +45,7 @@ def launch(context, *args, **kwargs):
 
     # create a node to bridge IGN <-> ROS arm joint states and pos cmd topics
     nodes.append(Node(
-        package='ros_ign_bridge',
+        package='ros_gz_bridge',
         executable='parameter_bridge',
         output='screen',
         arguments=[bridge.argument() for bridge in bridges],

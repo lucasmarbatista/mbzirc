@@ -47,7 +47,7 @@ def launch(context, *args, **kwargs):
     ]
     nodes = []
     nodes.append(Node(
-        package='ros_ign_bridge',
+        package='ros_gz_bridge',
         executable='parameter_bridge',
         output='screen',
         arguments=[bridge.argument() for bridge in bridges],

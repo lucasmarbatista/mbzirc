@@ -23,7 +23,7 @@ namespace mbzirc_seed
 ReadRfRange::ReadRfRange(const rclcpp::NodeOptions & options)
 : rclcpp::Node("read_rf_range", options)
 {
-  rf_range_sub_ = this->create_subscription<ros_ign_interfaces::msg::ParamVec>(
+  rf_range_sub_ = this->create_subscription<ros_gz_interfaces::msg::ParamVec>(
       "range", rclcpp::QoS(10),
       std::bind(&ReadRfRange::onRangeMessage, this, std::placeholders::_1));
 
@@ -64,7 +64,7 @@ void ReadRfRange::onTimer()
   }
 }
 
-void ReadRfRange::onRangeMessage(const ros_ign_interfaces::msg::ParamVec & msg)
+void ReadRfRange::onRangeMessage(const ros_gz_interfaces::msg::ParamVec & msg)
 {
   // Temporary location of parameter information.
   struct Entry

@@ -80,9 +80,9 @@ WORKDIR /home/$USERNAME
 # Prepare the colcon workspace
 RUN mkdir -p mbzirc_ws/src
 
-# clone ros_ign bridge
+# clone ros_gz bridge
 RUN cd /home/$USERNAME/mbzirc_ws/src \
- && git clone https://github.com/osrf/ros_ign.git -b galactic
+ && git clone https://github.com/osrf/ros_gz.git -b galactic
 
 WORKDIR /home/$USERNAME/mbzirc_ws
 
@@ -98,7 +98,7 @@ RUN sudo apt-get update \
 
 # build mbzirc_seed
 RUN /bin/bash -c 'source /opt/ros/galactic/setup.bash \
-  && colcon build --merge-install --packages-select ros_ign_interfaces mbzirc_seed'
+  && colcon build --merge-install --packages-select ros_gz_interfaces mbzirc_seed'
 
 RUN /bin/sh -c 'echo ". /opt/ros/galactic/setup.bash" >> ~/.bashrc' \
  && /bin/sh -c 'echo ". ~/mbzirc_ws/install/setup.sh" >> ~/.bashrc'

@@ -18,7 +18,7 @@
 #include <ignition/msgs/float_v.pb.h>
 #include <ignition/transport/Node.hh>
 
-#include <ros_ign_bridge/convert/std_msgs.hpp>
+#include <ros_gz_bridge/convert/std_msgs.hpp>
 
 #include <radar_msgs/msg/radar_scan.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -86,7 +86,7 @@ class NaiveRadarBridge : public rclcpp::Node
     // pack ros msg and publish
     // convert ign header to ros header
     radar_msgs::msg::RadarScan rosMsg;
-    ros_ign_bridge::convert_ign_to_ros(_msg.header(), rosMsg.header);
+    ros_gz_bridge::convert_gz_to_ros(_msg.header(), rosMsg.header);
     // fill radar return data
     for (unsigned int i = 0; i < _msg.data().size(); i+=3u)
     {

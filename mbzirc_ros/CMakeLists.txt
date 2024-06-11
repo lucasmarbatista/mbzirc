@@ -14,7 +14,7 @@ find_package(ignition-common4 REQUIRED)
 set(IGN_COMMON_VER ${ignition-common4_VERSION_MAJOR})
 find_package(mavros_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(ros_ign_interfaces REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
 find_package(rosgraph_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
@@ -55,7 +55,7 @@ add_executable(video_target_relay src/video_target_relay.cc)
 ament_target_dependencies(video_target_relay
   cv_bridge
   rclcpp
-  ros_ign_interfaces
+  ros_gz_interfaces
   sensor_msgs
   ignition-transport${IGN_TRANSPORT_VER}
   ignition-common${IGN_COMMON_VER}
@@ -104,7 +104,7 @@ if(BUILD_TESTING)
     geometry_msgs
     rclcpp
     rosgraph_msgs
-    ros_ign_interfaces
+    ros_gz_interfaces
     sensor_msgs
     std_msgs
     tf2_msgs

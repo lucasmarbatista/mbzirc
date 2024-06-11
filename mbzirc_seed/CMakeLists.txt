@@ -8,7 +8,7 @@ find_package(rclcpp_components REQUIRED)
 
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(ros_ign_interfaces REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
 
 find_package(ignition-math6 REQUIRED)
 set(IGN_MATH_VER ${ignition-math6_VERSION_MAJOR})
@@ -25,7 +25,7 @@ ament_target_dependencies(mbzirc_seed
   rclcpp_components
   geometry_msgs
   sensor_msgs
-  ros_ign_interfaces
+  ros_gz_interfaces
 )
 
 target_include_directories(mbzirc_seed
