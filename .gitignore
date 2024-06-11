@@ -35,3 +35,8 @@
 
 # Python objects
 *.pyc
+
+# Log, build and vscode
+build/
+log/
+.vscode/
