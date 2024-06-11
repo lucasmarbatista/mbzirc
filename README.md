@@ -34,7 +34,7 @@ See Installation instructions for:
 
     ```
     cd ~/mbzirc_ws/src
-    git clone https://github.com/ignitionrobotics/ros_gz.git -b humble
+    git clone https://github.com/gazebosim/ros_gz.git -b humble
     ```
 
 1. Install dependencies using [rosdep](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Binary.html#installing-and-initializing-rosdep)
